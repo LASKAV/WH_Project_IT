@@ -72,7 +72,7 @@ void exit_file_closed(std::string name_file)
 
 int num_str(char* num_s)  // Количество символов
 {
-	std::cout << "Количество символов = " << strlen(num_s) << std::endl;
+	std::cout << colors::GREEN_BOLD << "Количество символов = " << colors::RESET << colors::RED_BOLD << strlen(num_s) << colors::RESET << std::endl;
 	int rezalt = strlen(num_s);
 	return rezalt;
 }
@@ -94,8 +94,8 @@ int num_vowels_and_consonants(char* num_s)  // Количество гласны
 			iter2++;
 		}
 	}
-	std::cout << "Количество гласных = " << iter1 << std::endl;
-	std::cout << "Количество согласных = " << iter2 << std::endl;
+	std::cout << colors::GREEN_BOLD << "Количество гласных = " << colors::RESET << colors::RED_BOLD << iter1 << colors::RESET << std::endl;
+	std::cout << colors::GREEN_BOLD << "Количество согласных = " << colors::RESET << colors::RED_BOLD << iter2 << colors::RESET << std::endl;
 	return iter1, '\n', iter2;
 }
 
@@ -116,7 +116,7 @@ int num_num(char* num_s)  //  Количество цифр.
 		}
 
 	}
-	std::cout << "Количество цифр = " << iter << std::endl;
+	std::cout << colors::GREEN_BOLD << "Количество цифр = " << colors::RESET << colors::RED_BOLD << iter << colors::RESET << std::endl;
 	return iter;
 }
 
@@ -227,7 +227,7 @@ int main()
 				char file_txt[BUFF];     // обявляем массив char
 				fgets(file_txt, BUFF, File_scan);  // передаем все в массив 
 
-				std::cout << "___Statistics___" << std::endl;  // выводим статистику 
+				std::cout << colors::WHITE_BOLD << "___Statistics___" << colors::RESET << std::endl;  // выводим статистику 
 				num_str(file_txt);
 				num_vowels_and_consonants(file_txt);
 				num_num(file_txt);
