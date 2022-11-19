@@ -196,22 +196,30 @@ int main()
 				// подсчета статистики , и каждый раз они будут перезаписаны как только пользователь захочет посмотреть что хранит в себе файл. 
 				std::ofstream file;  
 				file.open("data.txt");
-
-				while (!File_target.eof())  // цикл будет рабоать пока не дайдет до конца файла
+				if (file.is_open() && File_target.is_open())
 				{
-					str = "";
-					std::getline(File_target, str);
-					std::cout << str << std::endl;  // выводим содержимое файла 
-					file << str;  // и потоком передаем данные в data.txt
-					iter++;
-				}
-				file_cloes(name_file);
+					while (!File_target.eof())  // цикл будет рабоать пока не дайдет до конца файла
+					{
+						str = "";
+						std::getline(File_target, str);
+						std::cout << str << std::endl;  // выводим содержимое файла 
+						file << str;  // и потоком передаем данные в data.txt
+						iter++;
+					}
+					file_cloes(name_file);
 
-				if (file.is_open())  // Если файл удалось прочесть выводим сколько строк он имеет 
-				{
+					//if (file.is_open())  // Если файл удалось прочесть выводим сколько строк он имеет 
+
 					std::cout << colors::BLACK_BOLD << "\nTerminal  " << colors::RESET
 						<< colors::GREEN_BOLD << "Количество строк = " << colors::RESET << iter << std::endl;
 				}
+				file_cloes(name_file);
+
+				//if (file.is_open())  // Если файл удалось прочесть выводим сколько строк он имеет 
+				
+					std::cout << colors::BLACK_BOLD << "\nTerminal  " << colors::RESET
+						<< colors::GREEN_BOLD << "Количество строк = " << colors::RESET << iter << std::endl;
+				
 			}
 			if (batton_num == 3)
 			{
@@ -252,7 +260,7 @@ int main()
 					<< colors::RED_BOLD << "\nНужно ввести число которое соответстувет выбору в menu !" << colors::RESET << std::endl;
 				flag = true;
 			}
-	}	 while (batton_num != 5 && flag == false);  // Условия выхода
+	}while (batton_num != 5 && flag == false);  // Условия выхода
 
 		system("pause");
 
