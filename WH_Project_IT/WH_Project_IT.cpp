@@ -213,13 +213,7 @@ int main()
 					std::cout << colors::BLACK_BOLD << "\nTerminal  " << colors::RESET
 						<< colors::GREEN_BOLD << "Количество строк = " << colors::RESET << iter << std::endl;
 				}
-				file_cloes(name_file);
-
-				//if (file.is_open())  // Если файл удалось прочесть выводим сколько строк он имеет 
-				
-					std::cout << colors::BLACK_BOLD << "\nTerminal  " << colors::RESET
-						<< colors::GREEN_BOLD << "Количество строк = " << colors::RESET << iter << std::endl;
-				
+				file_cloes(name_file);				
 			}
 			if (batton_num == 3)
 			{
