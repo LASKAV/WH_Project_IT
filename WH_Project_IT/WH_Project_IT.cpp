@@ -212,12 +212,11 @@ int main()
 
 					std::cout << colors::BLACK_BOLD << "\nTerminal  " << colors::RESET
 						<< colors::GREEN_BOLD << "Количество строк = " << colors::RESET << iter << std::endl;
-				}
-				file_cloes(name_file);				
+				}				
 			}
 			if (batton_num == 3)
 			{
-				const int BUFF = 1000000;  // создаем буфер на 1м 
+				const unsigned int BUFF = 1000000;  // создаем буфер на 1м 
 
 				FILE* File_scan = fopen("data.txt", "rt");  // "rt" - для чтения в текстовом виде с начала файла
 				// Теперь мы будем сканировать и для этого я выбрал вариант С 
